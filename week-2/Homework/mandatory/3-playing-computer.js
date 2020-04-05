@@ -15,28 +15,28 @@
   7. What is the value of the "a" outer variable when "f1" is called for the first time?
 */
 
-let x = 2;
-let a = 6;
+let x = 2;//assigning variable x to 2
+let a = 6;//assigning variable a to 6
 
-const f1 = function(a, b) {
+const f1 = function(a, b) { //creating a function called f1 taking two parameters a and b
+  return a + b; //return addition of a and b
+};
+
+const f2 = function(a, b, x) { //this is the other error maybe as parameter takes 3 returns 2
   return a + b;
 };
-
-const f2 = function(a, b) {
-  return a + b + x;
-};
-
-console.log(x);
-console.log(a);
-console.log(b);
-
+//logging to the console to see output
+console.log(x); //global variable 2 is on console
+console.log(a); //global variable 6 is printed on console
+//console.log(b); //error
+//
 for (let i = 0; i < 5; ++i) {
   a = a + 1;
-  if (i % 2 === 0) {
+  if (i % 2 === 0) { //checks if i is an even number and if yes for: 0 2 and 4
     const d = f2(i, x);
     console.log(d);
   } else {
-    const e = f1(i, a);
+    const e = f1(i, a);//called 2 times
     console.log(e);
   }
 }
